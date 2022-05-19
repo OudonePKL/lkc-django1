@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% for data in lkcDatas%}
+    <title>{{data.name}}</title>
+    {% endfor %}
+
+    <!--
+    - custom css link
+  -->
+    <link rel="stylesheet" href="{% static 'frontends/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'frontends/css/media_queries.css' %}">
+    <link rel="stylesheet" href="{% static 'frontends/css/animation.css' %}">
+
+    <!--
+    - google font link
+  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600;700;800;900&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+    
+
+</head>
+
+<body>
+
+    <!--
+    - main container
+  -->
+
+    <div class="container">
+
+        <!--
+      - #HEADER
+    -->
+
+        <header>
+
+            <nav class="navbar">
+
+                {% for lkc in lkcDatas %}
+                <div class="navbar-brand">
+                    <a href=""><img src="{{lkc.imageLogo.url}}" alt="Educator Logo"></a>
+                </div>
+                {% endfor %}
+
+                <ul class="navbar-nav">
+
+                    <li class="nav-item">
+                        <a href="#home">ໜ້າຫຼັກ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#about">ກ່ຽວກັບເຮົາ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#teacher">ບັນດາອາຈານ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#blog">ກິດຈະກຳພາຍໃນໂຮງຮຽນ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#footer">ຕິດຕໍ່ເຮົາ</a>
+                    </li>
+
+                </ul>
+
+                {% for lkc in lkcDatas %}
+                <button class="button button--bestia">
+                    <i id ="phon1"class="fa-solid fa-phone"></i>
+                    <a href="tel:021-671-080"><div class="button__bg"></div><span>{{lkc.phoneNumber}}</span></a>
+                    
+                </button>
+                {% endfor %}
+
+                <button class="nav-toggle-btn">
+          <span class="one"></span>
+          <span class="two"></span>
+          <span class="three"></span>
+        </button>
+
+            </nav>
+
+        </header>
+
+
+
+
+        <!-- 
+        - Body-contect
+        -->
+
+
+        <section id="home" class="body-contect">
+            <div class="div-img">
+
+                <div class="h-link">
+                    <ul class="h-lk">
+                        <li class="li-lk" style="--clr: #1877f2;">
+                            <a href="https://www.facebook.com/Lao-Korean-College-1472688249486161" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                        </li>
+                        <li class="li-lk" style="--clr: #1da1f2;">
+                            <a href="https://mail.google.com/mail/u/1/#inbox?compose=CllgCHrlFXxSVltzXzjLpfDNdcJmmxZMmfqNcphpnStfvpdxXdxQxBTfNqRmmSZNKqgMXvTKMrL" target="_blank"><i class="fa-solid fa-envelope" ></i></i></a>
+                        </li>
+                        <li class="li-lk" style="--clr: #ff0000;">
+                            <a href="https://www.google.la/maps/place/Lao-Korean+College/@17.9930949,102.527826,17.52z/data=!4m5!3m4!1s0x31246a203983bf9d:0x4d940a4a295e8838!8m2!3d17.9931247!4d102.5278148?hl=ko" target="_blank"><i class="fa-solid fa-location-dot"></i></a>
+                        </li>
+                    </ul>
+
+                    {% for title in lkcDatas %}
+                    <div class="text-hd">
+                        <h1>{{title.title1}}</h1>
+                        <h1 class="f-h1">{{title.title2}}</h1>
+                        <i class="fa-solid fa-arrow-down"></i>
+                    </div>
+                    {% endfor %}
+                    
+                    {% for bg in bgImage%}
+                    <div class="d-mg">
+                        <img src="{{bg.imageBG.url}}">
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+
+
+            <!--  -->
+            <!-- End header  -->
+            <!--  -->
+
+            {% for lkc in aboutUs %}
+            <section class="section-1 " id="about">
+                <div class="p-text">
+                    <h1 class="h-t">ກ່ຽວກັບເຮົາ</h1>
+                </div>
+                <div class="row ">
+                    <div class="pray " data-aos="fade-right ">
+                        <img src="{{lkc.imageAboutUs.url}}">
+                    </div>
+                    <div class="panel text-left " data-aos="fade-left ">
+                        <h1 class="pt-4 ">{{lkc.title}}</h1>
+                        <p>{{lkc.desc}}</p>
+                    </div>
+                </div>
+            </section>
+        {% endfor %}
+            <div class="b-dy">
+                <div class="p-text">
+                    <h1 class="h-t" id="t-hid">ເປົ້າໝາຍຂອງການສຶກສາ</h1>
+                    <div class="container2">
+                        <div class="box">
+                            <div class="textq">
+                                <p>ປູກຝັງຂອງວິສະວະກອນໄອທີຜູ້ທີ່ຈະຂັບເຄື່ອນວົງການໄອທີໃນອະນາຄົດຂອງ ສປປ ລາວ</p>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="textq">
+                                <p>ກາຍໄປນັກວິສະວະກອນຊອບແວ (ນັກຂຽນໂປຣແກມ), ວິສະວະກອນຄອມພິວເຕີ, ແລະ ວິສະວະກອນລະບົບເຄື່ອຂ່າຍ</p>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="textq">
+                                <p>ປູກຝັງຜູ້ມີພອນສະຫວັນດ້ວຍການແຂ່ງຂັນລະດັບສາກົນ</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="l-lom">
+
+                    <div class="p-text">
+                        <h1 class="h-t">ວິຊາຫຼັກ</h1>
+                        <div class="container2">
+                            <div class="c-lom">
+                                <div class="box2">
+                                    <div class="content2">
+                                        <div class="text">
+                                            <p>ພາສາໂປຣແກມ</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="box2">
+                                    <div class="content2">
+                                        <div class="text">
+                                            <p>ໂຄງສ້າງຂອງຄອມພິວເຕີ</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="c-lom">
+                                <div class="box2">
+                                    <div class="content2">
+                                        <div class="text">
+                                            <p>ການພັດທະນາຊອບແວ</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="box2">
+                                    <div class="content2">
+                                        <div class="text">
+                                            <p>ການວິເຄາະລະບົບ ແລະ ໂຄງສ້າງຂໍ້ມູນ</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="c-lom">
+                                <div class="box2">
+                                    <div class="content2">
+                                        <div class="text">
+                                            <p>ຖານຂໍ້ມູນ</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="box2">
+                                    <div class="content2">
+                                        <div class="text">
+                                            <p>ອອກແບບ ແລະ ພັດທະນາເວັບໄຊ</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-text">
+                        <h1 class="h-t">ສະຖານະພາບການຈ້າງງານ ແລະ ສະຖານະພາບການເຮັດວຽກຫຼັງຈາກຮຽນຈົບ</h1>
+                    </div>
+                    <div class="opp2">
+                        <p>ຖ້າຫາກທ່ານຈົບຈາກພາກວິຊານີ້, ທ່ານຈະສາມາດເຮັດວຽກໃນຂົງເຂດຕ່າງໆເຊັ່ນເປັນນັກຂຽນຊອບແວ, ພະນັກງານບໍລິການເຄືອຂ່າຍຄອມພິວເຕີ ແລະ ຜູ້ປະກອບການຄອມພິວເຕີ. ແລະທ່ານຍັງສາມາດຮຽນຮູ້ການອອກແບບລະບົບຄອມພິວເຕີ ແລະ ການພັດທະນາໂດຍຜ່ານຫຼັກສູດປະລິນຍາໂທ ແລະ
+                            ປະລິນຍາເອກ.
+                        </p>
+                    </div>
+                </div>
+                <div class="p-text">
+                    <h1 class="h-t">ບັນດາອາຈານ</h1>
+                </div>
+                <div class="grid1" id="teacher">
+                    {% for teacher1 in teachers1%}
+                    <div class="grid-item1">
+                        <img class="card-img1" src="{{teacher1.image.url}}" alt="Rome" />
+                        <div class="card-content1">
+                            <h1 class="card-header1">{{teacher1.firstName}}</h1>
+                            <p class="card-text1">{{teacher1.lastName}}</p>
+                        </div>
+                    </div>
+                    {% endfor%}
+                </div>
+
+                <div class="grid1">
+                    {% for teacher2 in teachers2%}
+                    <div class="grid-item1">
+                        <img class="card-img1" src="{{teacher2.image.url}}" alt="Rome" />
+                        <div class="card-content1">
+                            <h1 class="card-header1">{{teacher2.firstName}}</h1>
+                            <p class="card-text1">{{teacher2.lastName}}</p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                <hr>
+
+                
+                <div class="p-text" id="blog">
+                    <h1 class="h-t">ກິດຈະກຳພາຍໃນໂຮງຮຽນ</h1>
+                </div>
+
+                <div class="container-img">
+                    {% for lkc in lkcActivity %}
+                    <div class="item-img">
+                        <div class="img-con-img">
+                            <img src="{{lkc.imageAboutUs.url}}" alt="">
+                        </div>
+                    </div>
+                    {% endfor %}
+                    
+                </div>
+
+                
+
+
+        </section>
+
+        <!-- 
+        - End -> Body-contect
+        -->
+
+        <!--
+      - #FOOTER
+    -->
+
+        <footer>
+
+            <div class="footer-grid" id="footer">
+
+                <div class="grid-item">
+
+                    {% for lkc in lkcDatas %}
+                    <div class="footer-logo">
+                        <img src="{{lkc.imageLogo.url}}">
+                    </div>
+                    {% endfor %}
+
+                    <p class="footer-text ">
+                        ວິທະຍາໄລທີ່ໃຫ້ການບໍລິການແກ່ຄົນຍຸກໃໝ່ ແລະ ຊຸ່ມຊົນທີ່ຫ່າງໄກສອກຫຼີກ.
+                    </p>
+
+                    <div class="social-link">
+                        <a href="https://www.facebook.com/Lao-Korean-College-1472688249486161" target="_blank" class="i-1">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a href="https://mail.google.com/mail/u/1/#inbox?compose=CllgCHrlFXxSVltzXzjLpfDNdcJmmxZMmfqNcphpnStfvpdxXdxQxBTfNqRmmSZNKqgMXvTKMrL" target="_blank" class="i-2">
+                            <i class="fa-solid fa-envelope"></i>
+                        </a>
+                        <a href="tel:021-671-080" class="i-3">
+                            <i class="fa-solid fa-phone"></i>
+                        </a>
+                        <a href="https://www.google.la/maps/place/Lao-Korean+College/@17.9930949,102.527826,17.52z/data=!4m5!3m4!1s0x31246a203983bf9d:0x4d940a4a295e8838!8m2!3d17.9931247!4d102.5278148?hl=ko" target="_blank" class="i-4">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </a>
+                    </div>
+
+                </div>
+
+                <ul class="grid-item ">
+
+                    <h4 class="item-heading ">Our Link</h4>
+
+                    <li class="list-item ">
+                        <a href="http://lkclaos.org/" target="_blank">ວິທະຍາໄລລາວ-ເກົາຫຼີ</a>
+                    </li>
+
+                    <li class="list-item ">
+                        <a href="http://lkclaos.org/%e0%ba%84%e0%ba%b3%e0%ba%97%e0%ba%b1%e0%ba%81%e0%ba%97%e0%ba%b2%e0%ba%8d%e0%ba%88%e0%ba%b2%e0%ba%81%e0%ba%9c%e0%ba%b9%e0%bb%89%e0%ba%ad%e0%ba%b3%e0%ba%99%e0%ba%a7%e0%ba%8d%e0%ba%81%e0%ba%b2/" target="_blank">ຄຳທັກທາຍຈາກຜູ້ອຳນວຍການ</a>
+                    </li>
+
+                    <li class="list-item ">
+                        <a href="http://lkclaos.org/onlineregistration/" target="_blank">ລົງທະບຽນອອນລາຍ</a>
+                    </li>
+
+                    <li class="list-item ">
+                        <a href="http://lkclaos.org/%e0%ba%9b%e0%ba%b0%e0%ba%ab%e0%ba%a7%e0%ba%b1%e0%ba%94%e0%ba%84%e0%ba%a7%e0%ba%b2%e0%ba%a1%e0%bb%80%e0%ba%9b%e0%ba%b1%e0%ba%99%e0%ba%a1%e0%ba%b2/" target="_blank">ປະຫວັດຄວາມເປັນມາ</a>
+                    </li>
+
+                    <li class="list-item ">
+                        <a href="http://lkclaos.org/%e0%bb%80%e0%ba%88%e0%ba%b1%e0%ba%94%e0%ba%a5%e0%ba%b1%e0%ba%81%e0%ba%aa%e0%ba%b0%e0%ba%99%e0%ba%b0%e0%bb%80%e0%ba%94%e0%ba%b1%e0%bb%88%e0%ba%99%e0%ba%82%e0%ba%ad%e0%ba%87-lkc/" target="_blank">ເຈັດລັກສະນະເດັ່ນຂອງ LKC</a>
+                    </li>
+
+                </ul>
+                <ul class="grid-item ">
+
+                    <h4 class="item-heading " target="_blank">Our Link</h4>
+
+                    <li class="list-item ">
+                        <a href="http://lkclaos.org/%e0%bb%82%e0%ba%84%e0%ba%87%e0%ba%ae%e0%bb%88%e0%ba%b2%e0%ba%87%e0%ba%81%e0%ba%b2%e0%ba%99%e0%ba%88%e0%ba%b1%e0%ba%94%e0%ba%95%e0%ba%b1%e0%bb%89%e0%ba%87/" target="_blank">ໂຄງຮ່າງການຈັດຕັ້ງ</a>
+                    </li>
+
+                    <li class="list-item ">
+                        <a href="http://lkclaos.org/%e0%ba%a5%e0%ba%b0%e0%ba%9a%e0%ba%bb%e0%ba%9a%e0%ba%97%e0%ba%b6%e0%ba%99%e0%ba%81%e0%ba%b2%e0%ba%99%e0%ba%aa%e0%ba%b6%e0%ba%81%e0%ba%aa%e0%ba%b2/" target="_blank">ລະບົບທຶນການສຶກສາ</a>
+                    </li>
+
+
+                    <li class="list-item ">
+                        <a href="http://lkclaos.org/%e0%ba%ab%e0%ba%bc%e0%ba%b1%e0%ba%81%e0%ba%9b%e0%ba%b1%e0%ba%94%e0%ba%aa%e0%ba%b0%e0%ba%8d%e0%ba%b2-%e0%bb%81%e0%ba%a5%e0%ba%b0-%e0%bb%80%e0%ba%9b%e0%ba%bb%e0%bb%89%e0%ba%b2%e0%bb%9d%e0%ba%b2%e0%ba%8d/" target="_blank">ຫຼັກປັດສະຍາ ແລະ ເປົ້າໝາຍຂອງການສຶກສາ</a>
+                    </li>
+                    <li class="list-item ">
+                        <a href="http://lkclaos.org/lao-%e0%ba%ad%e0%ba%bb%e0%ba%87%e0%ba%81%e0%ba%b2%e0%ba%99%e0%ba%ae%e0%bb%88%e0%ba%a7%e0%ba%a1%e0%ba%a1%e0%ba%b7%e0%ba%aa%e0%ba%b2%e0%ba%81%e0%ba%bb%e0%ba%99/" target="_blank">ອົງການຮ່ວມມືສາກົນ</a>
+                    </li>
+
+
+                </ul>
+                <ul class="grid-item ">
+
+                    <h4 class="item-heading ">ຕິດຕໍ່ສື່ສານ</h4>
+
+                    <li class="list-item ">
+                        <a href="https://mail.google.com/mail/u/1/#inbox?compose=CllgCHrlFXxSVltzXzjLpfDNdcJmmxZMmfqNcphpnStfvpdxXdxQxBTfNqRmmSZNKqgMXvTKMrL" target="_blank"><span class="list-item-color">E-mail:</span> laokoreancollege@gmail.com</a>
+                    </li>
+
+                    <li class="list-item ">
+                        <a href="#footer"><span class="list-item-color ">Address:</span> Phonsavathnuea Village, Sikhottabong <br> District, Vientiane Capital, Lao PDR.</a>
+                    </li>
+
+                    <li class="list-item ">
+                        <a href="https://www.facebook.com/Lao-Korean-College-1472688249486161" target="_blank"><span class="list-item-color">Facebook:</span> lao-korean college</a>
+                    </li>
+                    <li class="list-item ">
+                        <a href="https://www.facebook.com/AjanComprogram" target="_blank"><span class="list-item-color">Facebook:</span> Computer Program Development Centre of Lao Korean College</a>
+                    </li>
+
+
+                </ul>
+
+            </div>
+        </footer>
+
+        </div>
+
+
+
+
+        <!--
+    - custom js link
+    
+  -->
+        <script src="{% static 'frontends/js/script.js' %}"></script>
+        <!--=============== SCROLL REVEAL===============-->
+        <script src="{% static 'frontends/js/assets/js/scrollreveal.min.js' %}"></script>
+        <script src="{% static 'frontends/js/assets/js/swiper-bundle.min.js' %}"></script>
+        <script src="{% static 'frontends/js/assets/js/main.js' %}"></script>
+        <!--
+    - ionicon link
+  -->
+        <script type="module " src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js "></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js "></script>
+
+</body>
+
+</html>

@@ -1,0 +1,128 @@
+/*-----------------------------------*\
+  #animation.css
+\*-----------------------------------*/
+
+#phon1 {
+    animation: phon1 1.5s linear infinite;
+}
+
+@keyframes phon1 {
+    0%,
+    50% {
+        box-shadow: 0 0 0 0 hsla(0, 0%, 100%, 1);
+    }
+    100% {
+        box-shadow: 0 0 0 20px transparent;
+        border-radius: 50px;
+    }
+}
+
+.fa-arrow-down {
+    animation: fa-arrow-down 2s infinite;
+}
+
+@keyframes fa-arrow-down {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-30px);
+    }
+    60% {
+        transform: translateY(-15px);
+    }
+}
+
+.i-1 {
+    animation: i-1 2.5s infinite;
+}
+
+.i-2 {
+    animation: i-1 2.6s infinite;
+}
+
+.i-3 {
+    animation: i-1 2.7s infinite;
+}
+
+.i-4 {
+    animation: i-1 2.8s infinite;
+}
+
+@keyframes i-1 {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-30px);
+    }
+    60% {
+        transform: translateY(-15px);
+    }
+}
+
+.navbar {
+    transition: 1s;
+}
+
+
+/* H-link */
+
+.h-1 i {
+    position: relative;
+    animation-name: example;
+    animation-duration: 2s;
+}
+
+@keyframes example {
+    0% {
+        left: 200px;
+        top: 0px;
+    }
+    100% {
+        left: 0px;
+        top: 0px;
+    }
+}
+
+.h-2 i {
+    position: relative;
+    animation-name: example2;
+    animation-duration: 3s;
+}
+
+@keyframes example2 {
+    0% {
+        left: 200px;
+        top: 0px;
+    }
+    100% {
+        left: 0px;
+        top: 0px;
+    }
+}
+
+.h-3 i {
+    position: relative;
+    animation-name: example3;
+    animation-duration: 4s;
+}
+
+@keyframes example3 {
+    0% {
+        left: 200px;
+        top: 0px;
+    }
+    100% {
+        left: 0px;
+        top: 0px;
+    }
+}
